@@ -1,0 +1,8 @@
+- name: Generate Ethereum Address
+  uses: cladular/generate-eth-address@v0
+  id: ethgen # Later used for reading the output
+  with:
+    data: '...PUBLIC-KEY...'
+# Use the output from the `ethgen` step
+- name: Print Gernerated Address
+  run: 'echo "Ethereum address: ${{ steps.ethgen.outputs.address }}"'
